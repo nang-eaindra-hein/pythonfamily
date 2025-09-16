@@ -590,4 +590,64 @@ print("subtract" ,method1.subtract())
 print("multiply" ,method1.multiply())
 print("divide" ,method1.divide())
 
-        
+
+#72.Construct the following structure with nested loop 54321,5432,543,54,5
+
+for i in range(1,6):
+    for x in range(5,i-1,-1):
+        print(x,end=" ")
+    print()
+
+#73.Create a hashed function password "Admin30" hashed_password = hashed_function(password) print(hashed_password)
+import hashlib
+
+password = "Admin30"
+Hash_password = hashlib.sha256(password.encode())
+
+print ("This is admin hash password" , Hash_password.hexdigest())
+
+print ("This is admin hash password" ,Hash_password.digest())
+
+#74. Numpy
+import numpy as np
+a = np.array([10,20,30,40])     #array
+c = np.arange(1,7)   #will arange 1 to 6
+f = np.arange(0,9,3)  #start=0,end=9,step=3
+
+b = np.array([[100,200,300,400],
+              [500,600,700,800]])    #array as matrix( first row ,sec col)
+
+d = np.zeros([3,3])  #rows,cols filled with zero
+e = np.ones([3,])   #rows 3 ,no col  filled with 1
+g = np.linspace(0,1,5)  #start=0 end=1 step=5 (0 0.25 0.5 0.75 1)  space evenly
+
+
+x = a >35
+
+print(a)
+print(a[0]) #first value
+print(a[-1])#last value
+
+print(a ** 2) # all array power up to 2
+print (a[:4])  #from first value to 4th value
+print(a * b)  #array a and array b math
+
+print(b.shape)   #total rows,cols
+print(b.dtype)   #datatype int64
+print(b[:,1])  #all rows,col 2
+print(b[0,1])  #row 3,col 2
+print(b.sum())    # all value sum
+print(b.sum(axis=0)) #all rows sum 
+print(b.sum(axis=1))  #all cols sum
+print(b.mean(),b.max(),b.min())  #average num,max ,min
+print(b[:2,1:])   #rows from start to 2 rows,cols from sec to last 
+
+print(x) #boolean (true false)
+print(a[x]) #true answer value
+
+print(c.reshape(2,3))  #reshape the value into matrix
+print(c.reshape(2,3).T)  # transpose,flip row and col
+print(np.eye(3))  #matrix start to end with 3 in middle must be 3
+
+
+
